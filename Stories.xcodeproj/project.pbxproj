@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E9337A7B2BED1BDE00678C50 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9337A7A2BED1BDE00678C50 /* Story.swift */; };
 		E9337A802BED247F00678C50 /* StoriesList.json in Resources */ = {isa = PBXBuildFile; fileRef = E9337A7E2BED1DDF00678C50 /* StoriesList.json */; };
+		E93B87DB2BEE3D0400BBC0C6 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93B87D92BEE3D0400BBC0C6 /* PDFViewController.swift */; };
+		E93B87DC2BEE3D0400BBC0C6 /* PDFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E93B87DA2BEE3D0400BBC0C6 /* PDFViewController.xib */; };
+		E93B87DF2BEE3FE200BBC0C6 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93B87DE2BEE3FE200BBC0C6 /* APIService.swift */; };
 		E9609E532BED18C40030FF1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9609E522BED18C40030FF1A /* AppDelegate.swift */; };
 		E9609E552BED18C40030FF1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9609E542BED18C40030FF1A /* SceneDelegate.swift */; };
 		E9609E5C2BED18C60030FF1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9609E5B2BED18C60030FF1A /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		E9337A7A2BED1BDE00678C50 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		E9337A7E2BED1DDF00678C50 /* StoriesList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = StoriesList.json; sourceTree = "<group>"; };
+		E93B87D92BEE3D0400BBC0C6 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		E93B87DA2BEE3D0400BBC0C6 /* PDFViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDFViewController.xib; sourceTree = "<group>"; };
+		E93B87DE2BEE3FE200BBC0C6 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E9609E4F2BED18C30030FF1A /* Stories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9609E522BED18C40030FF1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9609E542BED18C40030FF1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +77,40 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		E93B87DD2BEE3D0C00BBC0C6 /* PDFVC */ = {
+			isa = PBXGroup;
+			children = (
+				E93B87E12BEE4A3500BBC0C6 /* Controller */,
+				E93B87E22BEE4A3E00BBC0C6 /* View */,
+				E93B87E02BEE4A2700BBC0C6 /* Model */,
+			);
+			path = PDFVC;
+			sourceTree = "<group>";
+		};
+		E93B87E02BEE4A2700BBC0C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E93B87DE2BEE3FE200BBC0C6 /* APIService.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E93B87E12BEE4A3500BBC0C6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E93B87D92BEE3D0400BBC0C6 /* PDFViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E93B87E22BEE4A3E00BBC0C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E93B87DA2BEE3D0400BBC0C6 /* PDFViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E9609E462BED18C30030FF1A = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				E9609E6B2BED19410030FF1A /* StoriesVC */,
+				E93B87DD2BEE3D0C00BBC0C6 /* PDFVC */,
 				E9609E662BED18F40030FF1A /* Core */,
 				E9609E602BED18C60030FF1A /* Info.plist */,
 			);
@@ -186,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9337A802BED247F00678C50 /* StoriesList.json in Resources */,
+				E93B87DC2BEE3D0400BBC0C6 /* PDFViewController.xib in Resources */,
 				E9FEBC162BED2CBE00718BA3 /* StoryCollectionViewCell.xib in Resources */,
 				E9609E5F2BED18C60030FF1A /* LaunchScreen.storyboard in Resources */,
 				E9609E6A2BED193A0030FF1A /* StoriesViewController.xib in Resources */,
@@ -201,8 +243,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9FEBC152BED2CBE00718BA3 /* StoryCollectionViewCell.swift in Sources */,
+				E93B87DF2BEE3FE200BBC0C6 /* APIService.swift in Sources */,
 				E9609E692BED193A0030FF1A /* StoriesViewController.swift in Sources */,
 				E9337A7B2BED1BDE00678C50 /* Story.swift in Sources */,
+				E93B87DB2BEE3D0400BBC0C6 /* PDFViewController.swift in Sources */,
 				E9609E532BED18C40030FF1A /* AppDelegate.swift in Sources */,
 				E9609E552BED18C40030FF1A /* SceneDelegate.swift in Sources */,
 			);

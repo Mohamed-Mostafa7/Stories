@@ -41,7 +41,11 @@ class StoriesViewController: UIViewController {
 }
 
 extension StoriesViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pdfVC = PDFViewController()
+        pdfVC.story = stories?[indexPath.row]
+        navigationController?.pushViewController(pdfVC, animated: true)
+    }
 }
 
 extension StoriesViewController: UICollectionViewDataSource {
