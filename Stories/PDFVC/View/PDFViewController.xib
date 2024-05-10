@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PDFViewController" customModule="Stories" customModuleProvider="target">
             <connections>
-                <outlet property="activityIndicatorView" destination="A21-h1-lk1" id="BsN-1C-3DE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,21 +18,8 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="A21-h1-lk1">
-                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
-                    <color key="backgroundColor" red="0.92156862750000001" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <color key="color" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </activityIndicatorView>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="A21-h1-lk1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0sF-HT-wzV"/>
-                <constraint firstAttribute="bottom" secondItem="A21-h1-lk1" secondAttribute="bottom" id="SgK-TV-L1u"/>
-                <constraint firstItem="A21-h1-lk1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VUO-gN-NJr"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A21-h1-lk1" secondAttribute="trailing" id="qUb-aL-Ik9"/>
-            </constraints>
             <point key="canvasLocation" x="57.251908396946561" y="20.422535211267608"/>
         </view>
     </objects>
