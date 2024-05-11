@@ -71,14 +71,11 @@ class PDFViewController: UIViewController {
     private func presentPdf(url: URL) {
         DispatchQueue.main.async { [weak self] in
             self?.deleteActivityIndicator()
+            self?.pdfURL = url
             if let document = PDFDocument(url: url) {
                 self?.pdfView.document = document
             }
         }
-    }
-    
-    @objc private func printPDF() {
-        
     }
     
     // Save a urls to UserDefaults
@@ -90,6 +87,24 @@ class PDFViewController: UIViewController {
     func getStringFromUserDefaults(forKey key: String) -> URL? {
         let urlString = UserDefaults.standard.string(forKey: key)
         return URL(string: urlString ?? "")
+    }
+    
+    @objc func printPDF(){
+        if let guideUrl = pdfURL{
+            if UIPrintInteractionController.canPrint(guideUrl) {
+                let printInfo = UIPrintInfo(dictionary: nil)
+                printInfo.jobName = guideUrl.lastPathComponent
+                printInfo.outputType = .photo
+                
+                let printController = UIPrintInteractionController.shared
+                printController.printInfo = printInfo
+                printController.showsNumberOfCopies = false
+                
+                printController.printingItem = guideUrl
+                
+                printController.present(animated: true, completionHandler: nil)
+            }
+        }
     }
     
 }
