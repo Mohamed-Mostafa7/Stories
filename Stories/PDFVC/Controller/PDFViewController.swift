@@ -43,14 +43,20 @@ class PDFViewController: UIViewController {
     }
     
     private func downloadPDF(for story: Story) {
-        APIService.shared.downloadPDF(for: story) { [weak self] result in
-            switch result {
-            case .success(let fileURL):
-                print("PDF file downloaded successfully and saved to: \(fileURL)")
-                self?.deleteActivityIndicator()
-                self?.presentPdf(url: fileURL)
-            case .failure(let error):
-                print("Error downloading PDF: \(error.localizedDescription)")
+        // Check if the pdf is already downloaded.
+        if let url = getStringFromUserDefaults(forKey: story.title){
+            presentPdf(url: url)
+        } else {
+            // download the pdf.
+            APIService.shared.downloadPDF(for: story) { [weak self] result in
+                switch result {
+                case .success(let fileURL):
+                    print("PDF file downloaded successfully and saved to: \(fileURL)")
+                    self?.saveUrlStringToUserDefaults(url: fileURL, forKey: story.title)
+                    self?.presentPdf(url: fileURL)
+                case .failure(let error):
+                    print("Error downloading PDF: \(error.localizedDescription)")
+                }
             }
         }
     }
@@ -64,6 +70,7 @@ class PDFViewController: UIViewController {
     
     private func presentPdf(url: URL) {
         DispatchQueue.main.async { [weak self] in
+            self?.deleteActivityIndicator()
             if let document = PDFDocument(url: url) {
                 self?.pdfView.document = document
             }
@@ -72,6 +79,17 @@ class PDFViewController: UIViewController {
     
     @objc private func printPDF() {
         
+    }
+    
+    // Save a urls to UserDefaults
+    func saveUrlStringToUserDefaults(url: URL, forKey key: String) {
+        UserDefaults.standard.set("\(url)", forKey: key)
+    }
+    
+    // Retrieve pdf url from UserDefaults
+    func getStringFromUserDefaults(forKey key: String) -> URL? {
+        let urlString = UserDefaults.standard.string(forKey: key)
+        return URL(string: urlString ?? "")
     }
     
 }
