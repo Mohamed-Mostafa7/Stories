@@ -14,7 +14,7 @@ class PDFViewController: UIViewController {
         let indicator = UIActivityIndicatorView()
         indicator.startAnimating()
         indicator.style = .large
-        indicator.color = .systemRed
+        indicator.color = .lightGray
         return indicator
     }()
     var pdfView: PDFView!

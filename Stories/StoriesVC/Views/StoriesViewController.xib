@@ -32,7 +32,7 @@
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="y3K-rb-ewD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3Vs-M7-LKd"/>
                 <constraint firstAttribute="bottom" secondItem="y3K-rb-ewD" secondAttribute="bottom" id="8tD-xs-GoB"/>
